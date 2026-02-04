@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ponos Stream</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>Ponos Stream</h1>
+        <p class="subtitle">
+          Быстрый способ синхронно смотреть видео и слушать аудио на весь экран.
+        </p>
+      </header>
+
+      <section class="panel">
+        <div class="field">
+          <label for="room">Комната</label>
+          <input id="room" placeholder="например: ponos-1" />
+        </div>
+        <div class="actions">
+          <button id="role-sender">Я отправляю</button>
+          <button id="role-receiver">Я принимаю</button>
+        </div>
+      </section>
+
+      <section class="panel" id="sender-panel" hidden>
+        <h2>Отправитель</h2>
+        <div class="field">
+          <label for="file">Видео/аудио файл</label>
+          <input id="file" type="file" accept="video/*,audio/*" />
+        </div>
+        <button id="start-stream" disabled>Запустить трансляцию</button>
+      </section>
+
+      <section class="panel" id="receiver-panel" hidden>
+        <h2>Получатель</h2>
+        <p>Ждите, пока отправитель подключится.</p>
+        <button id="fullscreen" disabled>На весь экран</button>
+      </section>
+
+      <section class="player" id="player" hidden>
+        <video id="video" playsinline controls></video>
+      </section>
+
+      <section class="panel notes">
+        <h2>Как использовать</h2>
+        <ol>
+          <li>Откройте страницу у обоих участников.</li>
+          <li>Введите одинаковое имя комнаты.</li>
+          <li>Один участник выбирает роль отправителя и файл.</li>
+          <li>Второй участник выбирает роль получателя и ждет поток.</li>
+        </ol>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
